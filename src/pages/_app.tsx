@@ -2,6 +2,7 @@ import "src/styles/globals.css";
 import type { AppProps } from "next/app";
 
 import { BaseCSS, GridThemeProvider } from "styled-bootstrap-grid";
+import Layouts from "src/containers/Layouts";
 
 const gridTheme = {
   gridColumns: 12,
@@ -36,7 +37,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <GridThemeProvider gridTheme={gridTheme}>
       <>
-        <Component {...pageProps} />
+        <Layouts>
+          <Component {...pageProps} />
+        </Layouts>
 
         <BaseCSS />
       </>

@@ -18,7 +18,7 @@ function Alert({ name, icon }: Props) {
     showConfirmButton: true,
     timer: 3000,
     timerProgressBar: true,
-    didOpen: toast => {
+    didOpen: (toast: any) => {
       toast.addEventListener('mouseenter', Swal.stopTimer);
       toast.addEventListener('mouseleave', Swal.resumeTimer);
     },
