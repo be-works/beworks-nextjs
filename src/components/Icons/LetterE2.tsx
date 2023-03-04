@@ -1,0 +1,24 @@
+import React, { CSSProperties } from "react";
+
+type IconType = {
+  style?: CSSProperties | undefined;
+  className?: string | undefined;
+};
+
+const LetterE2: React.FC<IconType> = (props) => (
+  <svg
+    {...props}
+    width="236"
+    height="448"
+    viewBox="0 0 236 448"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 447.638H235.222V367.063L69.3937 367.063V260.909L209.723 260.909V180.974L69.3937 180.974V81.2143L229.485 81.2143V0H0V447.638Z"
+      fill="white"
+    />
+  </svg>
+);
+
+export default LetterE2;

@@ -6,6 +6,12 @@ export const mixinsFlexCenter = css`
   align-items: center;
 `;
 
+export const mixinsFlexSpaceBetween = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const mixinAbsolute = css`
   position: absolute;
   content: '';

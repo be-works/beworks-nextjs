@@ -1,8 +1,14 @@
-import "src/styles/globals.css";
 import type { AppProps } from "next/app";
 
+import "sweetalert2/dist/sweetalert2.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import { ThemeProvider } from "styled-components";
 import { BaseCSS, GridThemeProvider } from "styled-bootstrap-grid";
 import Layouts from "src/containers/Layouts";
+import theme from "src/styles/theme";
+import { GlobalStyle } from "src/styles/global-styles";
 
 const gridTheme = {
   gridColumns: 12,
@@ -36,13 +42,14 @@ const gridTheme = {
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <GridThemeProvider gridTheme={gridTheme}>
-      <>
+      <ThemeProvider theme={theme}>
         <Layouts>
           <Component {...pageProps} />
         </Layouts>
 
+        <GlobalStyle />
         <BaseCSS />
-      </>
+      </ThemeProvider>
     </GridThemeProvider>
   );
 }
