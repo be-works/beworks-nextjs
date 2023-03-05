@@ -4,8 +4,8 @@ import { StylesHeader } from "../style";
 import logo from "src/assets/image/logo.jpg";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Image from "next/image";
 import { FaBars } from "react-icons/fa";
+import LogoText from "src/components/Icons/LogoText";
 
 interface Props {}
 
@@ -17,12 +17,12 @@ function Header({}: Props) {
           <div className="header">
             <div className="logo">
               <Link href="/">
-                <Image src={logo} alt="logo" />
+                <LogoText className="logo_main" />
               </Link>
             </div>
 
             <div className="open_menu">
-              Menu <FaBars />
+              <span>Menu</span> <FaBars />
             </div>
           </div>
         </Container>

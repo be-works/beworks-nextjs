@@ -5,9 +5,4 @@ export const GlobalStyle = createGlobalStyle`
     padding : 0;
     margin : 0;
   }
-
-  .container {
-    padding: 20px 0;
-    min-height: 350px;
-  }
 `;
