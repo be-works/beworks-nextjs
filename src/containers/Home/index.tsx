@@ -7,7 +7,7 @@ export default function Home() {
     <SHome>
       <Banner />
 
-      <System />
+      {/* <System /> */}
     </SHome>
   );
 }

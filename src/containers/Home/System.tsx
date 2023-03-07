@@ -14,11 +14,13 @@ import layer2 from "src/assets/image/system/layer2.gif";
 import layer3 from "src/assets/image/system/layer3.gif";
 import layer4 from "src/assets/image/system/layer4.gif";
 import system_arrow from "src/assets/image/system/system_arrow.gif";
+import bg from "src/assets/image/system/bfn.png";
+
 import Image from "next/image";
 
 export default function System() {
   return (
-    <SSystem>
+    <SSystem image={bg}>
       <div className="section-system">
         <Container>
           <div className="module module-system">

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import bg from "../../../assets/image/system/bfn.png";
 
 const SHome = styled.div``;
 
@@ -31,33 +30,228 @@ export const SBanner = styled.div`
     }
 
     .banner_letters_wrap {
-      width: 100%;
+      width: 80%;
+      height: 90%;
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
 
       .banner_letters {
-        width: 15%;
-        height: auto;
+        height: 90%;
+        display: flex;
+        align-items: center;
+
+        animation: banner_letters 2s linear infinite;
+        animation-direction: normal;
+        animation-delay: 0.4s;
+        @keyframes banner_letters {
+          0% {
+            width: 10.5%;
+          }
+          15% {
+            width: 11%;
+          }
+          30% {
+            width: 11.5%;
+          }
+          45% {
+            width: 12%;
+          }
+          60% {
+            width: 12.5%;
+          }
+          75% {
+            width: 13%;
+          }
+          90% {
+            width: 13.5%;
+          }
+          100% {
+            width: 14%;
+          }
+        }
 
         .letter_item {
           width: 100%;
+          height: 100%;
         }
 
-        .letter_item_1 {
-        }
-
-        .letter_item_2 {
+        .letter_item2 {
           display: none;
+        }
+      }
+
+      .banner_letters_1 {
+        transform: unset;
+        top: unset;
+        left: unset;
+
+        animation: banner_letters_1 2s linear infinite;
+        animation-direction: normal;
+        animation-delay: 0.4s;
+        @keyframes banner_letters_1 {
+          0% {
+            top: 100px;
+            left: 100px;
+            transform: rotate(50deg);
+          }
+          15% {
+            top: 100px;
+            left: 100px;
+            transform: rotate(100deg);
+          }
+          30% {
+            top: 100px;
+            left: 100px;
+            transform: rotate(150deg);
+          }
+          45% {
+            top: 100px;
+            left: 100px;
+            transform: rotate(200deg);
+          }
+          60% {
+            top: 100px;
+            left: 100px;
+            transform: rotate(250deg);
+          }
+          75% {
+            top: 100px;
+            left: 100px;
+            transform: rotate(300deg);
+          }
+          90% {
+            top: 100px;
+            left: 100px;
+            transform: rotate(350deg);
+          }
+          100% {
+            top: 100px;
+            left: 100px;
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+
+    .test {
+      svg {
+        display: block;
+        font: 10.5em "Montserrat";
+        width: 960px;
+        height: 300px;
+        margin: 0 auto;
+      }
+
+      .text-copy {
+        fill: none;
+        stroke: white;
+        stroke-dasharray: 6% 29%;
+        stroke-width: 5px;
+        stroke-dashoffset: 0%;
+        animation: stroke-offset 5.5s infinite linear;
+      }
+
+      .text-copy:nth-child(1) {
+        stroke: #4d163d;
+        animation-delay: -1;
+      }
+
+      .text-copy:nth-child(2) {
+        stroke: #840037;
+        animation-delay: -2s;
+      }
+
+      .text-copy:nth-child(3) {
+        stroke: #bd0034;
+        animation-delay: -3s;
+      }
+
+      .text-copy:nth-child(4) {
+        stroke: #bd0034;
+        animation-delay: -4s;
+      }
+
+      .text-copy:nth-child(5) {
+        stroke: #fdb731;
+        animation-delay: -5s;
+      }
+
+      @keyframes stroke-offset {
+        100% {
+          stroke-dashoffset: -35%;
         }
       }
     }
   }
+
+  ul {
+    position: relative;
+    display: flex;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  label {
+    position: relative;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    z-index: 100;
+  }
+
+  div {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    background: #18191f;
+    color: #555;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 46px;
+    cursor: pointer;
+    margin: 0 4px;
+    border-radius: 20px;
+    box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+      4px 4px 6px rgba(0, 0, 0, 0.2),
+      inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+      inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  input[type="checkbox"]:checked ~ div {
+    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+      inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+    animation: glow 1.5s linear infinite;
+  }
+
+  @keyframes glow {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
 `;
 
-export const SSystem = styled.div`
+type PropType = {
+  image?: any;
+};
+
+export const SSystem = styled.div<PropType>`
   .section-system {
-    background-image: url(${require('../../../assets/image/system/bfn.png')});
+    background-image: url(${(p) => p && p.image});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
